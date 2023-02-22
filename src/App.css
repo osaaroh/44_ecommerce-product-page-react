@@ -134,6 +134,11 @@ nav::after{
   }
 }
 
+.menu{
+  background: none;
+  border: none;
+}
+
 .menu__wrapper {
   display:none;
   position: fixed;

@@ -6,7 +6,7 @@ import menuIcon from '../images/icon-menu.svg'
 import delIcon from '../images/icon-delete.svg'
 import profileImage from '../images/image-avatar.png'
 import {hideHoverBar,displayHoverBar} from "../utils/navUtils"
-import { useState, useEffect } from 'react';
+import { useState} from 'react';
 import { useGlobalContext } from '../context';
 import Cart from './Cart';
 const Navbar =()=>{
@@ -19,7 +19,10 @@ const Navbar =()=>{
         <div className="container">
             <nav>
                 <div className="menu__wrapper">
-                    <img src={mobileNavOpen?closeIcon:menuIcon} alt="menuIcon" className="menu-ico" aria-label='menu' aria-expanded={mobileNavOpen} onClick={()=>{setMobileNavOpen(!mobileNavOpen)}}/>
+                    <button className="menu" aria-label='menu' aria-expanded={mobileNavOpen} onClick={()=>{setMobileNavOpen(!mobileNavOpen)}}>
+                        <img src={mobileNavOpen?closeIcon:menuIcon} alt="menuIcon" className="menu-ico" />
+                    </button>
+                    
                 </div>
                 <div className="logo__wrapper">
                     <img src={sneakerLogo} alt="Logo" className="logo" />
