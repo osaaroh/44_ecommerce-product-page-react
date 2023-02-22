@@ -39,9 +39,6 @@ body{
 }
 
 
-.hide{
-  display: none !important;
-}
 
 .btn{
   border-radius: 0.4rem;
@@ -636,6 +633,18 @@ main .container {
     width: 100%;
   }
 }
+
+
+.modal-hide{
+    display: none ;
+}
+
+@media only screen and (max-width: 720px) {
+  .hide{
+    display: none ;
+  }
+}
+
 
 
 

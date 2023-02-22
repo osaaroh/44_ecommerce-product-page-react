@@ -12,43 +12,19 @@ import Cart from './Cart';
 const Navbar =()=>{
     const [mobileNavOpen, setMobileNavOpen] = useState(false);
     const [cartOpen, setCartOpen] = useState(false);
-    const [isReized, setIsResized] = useState(0);
     const {price, cartQuantity, productThumbs, clearCart} = useGlobalContext()
 
-    const isWindowMobileView=(navParams)=>{
-        if (document.body.clientWidth <= 720 && navParams) {
-            return { "display":"block"};
-        } else if(document.body.clientWidth > 720){
-            return {};
-        } else {
-            return {"display":"none"};
-        }
-    }
-    
-
-    /*Using useEffect to track screen resize and refresh component for navbar switch is a temporary fix 
-    as it gives a performance hit. Working to replacing with a more efficient 
-    solution*/
-    useEffect(()=>{
-        window.addEventListener("resize", function(event) {
-            if (document.body.clientWidth <= 720 ) {
-                setIsResized(0);
-            }else{
-                setIsResized(1)
-            }
-        },[isReized])
-    })
     return (
     <header>
         <div className="container">
             <nav>
                 <div className="menu__wrapper">
-                    <img src={mobileNavOpen?closeIcon:menuIcon} alt="menuIcon" className="menu-ico" onClick={()=>{setMobileNavOpen(!mobileNavOpen)}}/>
+                    <img src={mobileNavOpen?closeIcon:menuIcon} alt="menuIcon" className="menu-ico" aria-label='menu' aria-expanded={mobileNavOpen} onClick={()=>{setMobileNavOpen(!mobileNavOpen)}}/>
                 </div>
                 <div className="logo__wrapper">
                     <img src={sneakerLogo} alt="Logo" className="logo" />
                 </div>
-                <div className="nav-list__wrapper" style={isWindowMobileView(mobileNavOpen)}>
+                <div className={`nav-list__wrapper ${mobileNavOpen===false?'hide':''}`}>
                     <div className="nav-list">
                         <a href="#link" onMouseEnter={(e)=>displayHoverBar(e)} onMouseLeave={hideHoverBar} className="nav-link nav-first__link">Collections</a>
                         <a href="#link" onMouseEnter={(e)=>displayHoverBar(e)} onMouseLeave={hideHoverBar} className="nav-link">Men</a>

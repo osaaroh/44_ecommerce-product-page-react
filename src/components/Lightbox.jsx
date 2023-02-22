@@ -2,7 +2,7 @@ import { useGlobalContext } from '../context';
 const LightBox = () =>{
     const {currentProduct, products, productThumbs, prevProduct, nextProduct, lightboxOpen, setLightboxOpen, setCurrentProduct}= useGlobalContext()
     return (
-        <div className={`lightbox__modal-bg ${lightboxOpen===false?'hide':''}`}>
+        <div className={`lightbox__modal-bg ${lightboxOpen===false?'modal-hide':''}`}>
             <div className='lightbox__wrapper'>
                 <div className="lightbox__icon-close--wrapper">
                     <div className="lightbox__icon-close" onClick={()=>{setLightboxOpen(false)}}></div>
