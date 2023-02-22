@@ -11,7 +11,7 @@ const Cart =({cartOpen, cartQuantity, productThumbs, price, clearCart, delIcon})
                         </div>
                         <img className='cart-del__icon'src={delIcon} alt="" onClick={()=>{clearCart()}}/>
                     </div>
-                    <button className="btn btn-primary btn-checkout" onClick={()=>{alert('This is a demo btn')}}>Checkout</button></>
+                    <button className="btn btn-primary btn-checkout" onClick={()=>{alert('Thank You! This is just a demo')}}>Checkout</button></>
                     : <div className='cart-body'>
                     <div className='cart-body__text'>
                         <p className='cart-body__text--empty'>Your cart is empty</p>
