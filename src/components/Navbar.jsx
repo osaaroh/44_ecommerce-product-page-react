@@ -34,6 +34,7 @@ const Navbar =()=>{
                         <a href="#link" onMouseEnter={(e)=>displayHoverBar(e)} onMouseLeave={hideHoverBar} className="nav-link">Women</a>
                         <a href="#link" onMouseEnter={(e)=>displayHoverBar(e)} onMouseLeave={hideHoverBar} className="nav-link">About</a>
                         <a href="#link" onMouseEnter={(e)=>displayHoverBar(e)} onMouseLeave={hideHoverBar} className="nav-link">Contact</a>
+                        <a target="_blank" rel='noreferrer' href="https://github.com/osaaroh/44_ecommerce-product-page-react" onMouseEnter={(e)=>displayHoverBar(e)} onMouseLeave={hideHoverBar} className="nav-link">Source Code</a>
                         <div className="nav__hoverbar"></div>
                     </div>
                 </div>
