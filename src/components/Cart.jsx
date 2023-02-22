@@ -7,7 +7,7 @@ const Cart =({cartOpen, cartQuantity, productThumbs, price, clearCart, delIcon})
                         <img className='cart-body__thumbs' src={productThumbs} alt="" />
                         <div className='cart-body__text'>
                             <p>Fall Limited Edition Sneakers</p>
-                            <p>$125.00 x {cartQuantity} <span>${price}.00</span> </p>
+                            <p aria-live="polite">$125.00 x {cartQuantity} <span aria-label="total cost">${price}.00</span> </p>
                         </div>
                         <img className='cart-del__icon'src={delIcon} alt="" onClick={()=>{clearCart()}}/>
                     </div>
