@@ -1,6 +1,6 @@
 const Cart =({cartOpen, cartQuantity, productThumbs, price, clearCart, delIcon})=>{
     return (
-        <div className={`cart-content ${cartOpen?'':'hide'}`}>
+        <div className={`cart-content ${cartOpen?'':'modal-hide'}`}>
                     <h6 className="cart-content__title">Cart</h6>
                     {cartQuantity > 0 ? <>
                     <div className='cart-body'>
